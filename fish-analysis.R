@@ -5,3 +5,6 @@ fish_data_cat = fish_data %>% mutate(length_cat = ifelse(length > 200, "big", "s
 #change the size of the category cutoff from > 200 to >300
 fish_data_cat = fish_data %>% mutate(length_cat = ifelse(length > 300, "big", "small"))
 fish_data = read.csv("data/Gaeta_etal_CLC_data.csv")
+#used R as a time machine and deleted + reverted a few different things.
+fish_data_cat = fish_data %>% 
+  mutate(length_cat = ifelse(length > 300, "large", "small"))
