@@ -1,0 +1,19 @@
+Gender,Film,Race,Words
+Male,The Fellowship Of The Ring,Elf,971
+Male,The Two Towers,Elf,513
+Male,The Return Of The King,Elf,510
+Female,The Fellowship Of The Ring,Elf,1229
+Female,The Two Towers,Elf,331
+Female,The Return Of The King,Elf,183
+Male,The Fellowship Of The Ring,Hobbit,3644
+Male,The Two Towers,Hobbit,2463
+Male,The Return Of The King,Hobbit,2673
+Female,The Fellowship Of The Ring,Hobbit,14
+Female,The Two Towers,Hobbit,0
+Female,The Return Of The King,Hobbit,2
+Male,The Fellowship Of The Ring,Man,1995
+Male,The Two Towers,Man,3589
+Male,The Return Of The King,Man,2459
+Female,The Fellowship Of The Ring,Man,0
+Female,The Two Towers,Man,401
+Female,The Return Of The King,Man,268
