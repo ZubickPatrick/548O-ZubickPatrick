@@ -47,7 +47,7 @@ lotr_untidy_counting = mutate(lotr_untidy,words = Female + Male)
 # do a plot here too for the last step. 
 p2 = ggplot(lotr_untidy_counting, aes(x=Film, y = words, fill = Race))
 p2 + geom_bar(stat= "identity", position = "dodge")+coord_flip() + guides(fill = guide_legend(reverse = TRUE))
-
+#need to do this last analysis using the 3 basic individual dataframes.
 
   
 
