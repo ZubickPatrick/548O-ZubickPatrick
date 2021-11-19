@@ -86,25 +86,90 @@ ds_weight_by_year = summarize(ds_data_by_year, avg_weight = mean(weight, na.rm =
 survey_year_month_day = select(surveys, year, month, day, species_id)
 view(survey_year_month_day)
 
-weight_kg = na.omit(surveys)
-weight_kg = select(weight_kg,year, species_id, weight)
+# weight of each individual in KG
+weight_kg = select(surveys,year, species_id, weight)
+weight_kg = na.omit(weight_kg)
 weight_kg = mutate(weight_kg, weight = weight / 1000)
+weight_kg
 
+# data frame rows only SH 
 df_filter_SH = filter(surveys,species_id == "SH")
 view(df_filter_SH)
 
+# count of individuals in each species.
 survey_countspp= group_by(surveys,species_id)
 survey_countspp = summarize(survey_countspp, abundance = n())
 view(survey_countspp)
 
+#count species id by year
 surveys_spp_yr = group_by(surveys, year, species_id)
 surveys_spp_yr = summarize(surveys_spp_yr, abundance = n())
 view(surveys_spp_yr)
 
+# mean mass of DO by year
 surveys_mass = group_by(surveys, species_id)
 surveys_mass = filter(surveys_mass, species_id =="DO")
 surveys_mass = na.omit(surveys_mass)
-surveys_mass = summarize(surveys_mass, mean_weight = mean(weight))
+surveys_mass
+surveys_mass = group_by(surveys_mass,year)
+surveys_mass = summarize(surveys_mass, year, mean_weight = mean(weight))
+surveys_mass_year_DO = dplyr::distinct(surveys_mass)
+view(surveys_mass_year_DO)
+
+#continue exercise 2
+
+x = c(1, 2, 3)
+mean(x)
+
+x %>% mean()
+
+x = c(1, 2, 3, NA)
+mean(x, na.rm = TRUE)
+x %>% mean(na.rm = TRUE)
+
+surveys %>%
+  filter(species_id == "DS", !is.na(weight))
+
+ds_weight_by_year <- surveys %>%
+  filter(species_id == "DS") %>%
+  group_by(year) %>%
+  summarize(avg_weight = mean(weight, na.rm = TRUE))
+
+# exercise 3 
+
+# df with year, species id and weight in KG 
+weight_kg_piped = surveys %>% select(year, species_id, weight) %>% na.omit(weight_kg_piped) %>% mutate(weight = weight/1000)
+weight_kg_piped
+
+# df with yr, month, day and species id for SH. 
+sh_piped = surveys %>% select (year, month,day, species_id) %>% filter(species_id == "SH")
+sh_piped
+
+# countof each species ID 
+count_id= surveys %>% group_by(species_id) %>% summarize(abundance = n())
+
+# count id by year 
+
+count_id_year= surveys %>% group_by(species_id,year) %>% summarize(abundance = n())
+count_id_year
+#mean mass DO by year
+Mean_mass_DO = surveys %>% group_by(species_id) %>% filter(species_id == "DO") %>% na.omit() %>% group_by(year)%>% summarise(year, mean_weight = mean(weight))
+Mean_mass_DO
+#why is it duplicating?!?!?! 
+
+filter(surveys, species_id == "DS", year > 1995)
+
+filter(surveys, species_id == "DS" & year > 1995)
+
+filter(surveys, species_id == "DS" | species_id == "DM" | species_id == "DO")
+
+species_weights <- surveys %>%
+  group_by(species_id) %>%
+  filter(n() > 100) %>%
+  summarize(avg_weight = mean(weight, na.rm = TRUE))
+species_weights
+
+# all done, need to ask Rachel a few questions. 
 
 
 
