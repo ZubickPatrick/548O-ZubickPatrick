@@ -45,7 +45,6 @@ view(filtered_shrub)
 shrub_data_w_vols = mutate(shrub_data, volume = length * width * height)
 view(shrub_data_w_vols)
 
-#starting exercise 2
 
 #learning about aggregation
 
@@ -79,7 +78,7 @@ ds_data_by_year = group_by (ds_data, year)
 
 ds_weight_by_year = summarize(ds_data_by_year, avg_weight = mean(weight, na.rm = TRUE))
 
-# this was inefficient because of doing this in this way is a 3 step process. involving creating 3 different objects.
+# this was inefficient because of doing this in this way is a 3 step process. involving creating 3 different objects.pipes would make it better i believe
 
 # lets do exercise 2
 
@@ -152,9 +151,11 @@ count_id= surveys %>% group_by(species_id) %>% summarize(abundance = n())
 
 count_id_year= surveys %>% group_by(species_id,year) %>% summarize(abundance = n())
 count_id_year
+
 #mean mass DO by year
 Mean_mass_DO = surveys %>% group_by(species_id) %>% filter(species_id == "DO") %>% na.omit() %>% group_by(year)%>% summarise(year, mean_weight = mean(weight))
 Mean_mass_DO
+
 #why is it duplicating?!?!?! 
 
 filter(surveys, species_id == "DS", year > 1995)
@@ -169,7 +170,7 @@ species_weights <- surveys %>%
   summarize(avg_weight = mean(weight, na.rm = TRUE))
 species_weights
 
-# all done, need to ask Rachel a few questions. 
+# all done, need to ask Rachel a few questions. line 159
 
 
 
