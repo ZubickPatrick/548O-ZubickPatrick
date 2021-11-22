@@ -135,6 +135,7 @@ ds_weight_by_year <- surveys %>%
   summarize(avg_weight = mean(weight, na.rm = TRUE))
 
 # exercise 3 
+library(tidyverse)
 
 # df with year, species id and weight in KG 
 weight_kg_piped = surveys %>% select(year, species_id, weight) %>% na.omit(weight_kg_piped) %>% mutate(weight = weight/1000)
