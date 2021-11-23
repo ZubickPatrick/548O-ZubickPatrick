@@ -154,10 +154,10 @@ count_id_year= surveys %>% group_by(species_id,year) %>% summarize(abundance = n
 count_id_year
 
 #mean mass DO by year
-Mean_mass_DO = surveys %>% group_by(species_id) %>% filter(species_id == "DO") %>% na.omit() %>% group_by(year)%>% summarise(year, mean_weight = mean(weight))
-Mean_mass_DO
+Mean_mass_DO = na.omit(surveys) %>% group_by(species_id,year) %>% filter(species_id == "DO") %>% summarise(mean_weight = mean(weight))
+view(Mean_mass_DO)
 
-#why is it duplicating?!?!?! 
+#thanks Rachel for helping with duplication error, (for myself, it was due to the using year again in summarise, confuses it due to the group by feature earlier in the code)
 
 filter(surveys, species_id == "DS", year > 1995)
 
