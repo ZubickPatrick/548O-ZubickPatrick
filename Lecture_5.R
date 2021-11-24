@@ -86,3 +86,5 @@ view(flights)
 
 planes_age = planes %>% mutate( age_plane = 2013 - year)
 view(planes_age)
+
+#remeber rachel tip using avg delay.
