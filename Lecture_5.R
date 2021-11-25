@@ -88,3 +88,29 @@ planes_age = planes %>% mutate( age_plane = 2013 - year)
 view(planes_age)
 
 #remeber rachel tip using avg delay.
+
+# first need to group the flights DF by dest
+flights_grouped = group_by(flights, dest, tailnum)
+
+view(flights_grouped)
+
+flights_grouped2 = summarise(flights_grouped, delay = mean(arr_delay))
+view(flights_grouped2)
+
+# got some pesky NA in there. 
+flights_grouped_nona = summarise(flights_grouped, delay = mean(arr_delay, na.rm = TRUE))
+view(flights_grouped_nona)
+
+# now have avg delay, lets add this column to the planes age DF using tailnum
+view(flights_grouped_nona)
+view(planes_age)
+
+planeage_delay = dplyr::left_join(flights_grouped_nona,planes_age, by = "tailnum")
+view(planeage_delay)
+planeage_delay_omit = na.omit(planeage_delay)
+
+# should be good to go, lets make a scatter plot 
+
+ggplot(planeage_delay_omit, aes(x=age_plane, y = delay))+geom_point()
+
+# well that did not work. need to troubleshoot some stuff clearly. omit NA and 0. and deal with planeage issues.
