@@ -34,4 +34,23 @@ grep("ac{2,3}b", strings, value = TRUE)
 grep("ee+", gDat$country, value = TRUE) 
 # greece
 
-     
+(strings <- c("abcd", "cdab", "cabd", "c abd"))
+
+grep("ab", strings, value = TRUE)
+
+grep("^ab", strings, value = TRUE)
+
+grep("ab$", strings, value = TRUE)
+
+grep("\\bab", strings, value = TRUE) 
+
+grep(".R$", dir(), value = TRUE)
+
+
+(strings <- c("abcd", "cdab", "cabd", "c abd"))
+grep("ab", strings, value = TRUE)
+grep("^ab", strings, value = TRUE)
+grep("ab$", strings, value = TRUE)
+grep("\\bab", strings, value = TRUE)
+
+
