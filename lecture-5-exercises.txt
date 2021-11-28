@@ -1,5 +1,5 @@
 13.2.1: 
-1.) to draw the route I would need the variables of origin, dest, and lat long. I would need to combine the planes, flights and airports tables.
+1.) to draw the route I would need the variables of origin, dest, and lat long. I would need to combine the flights and airports tables.
 
 2.)The relationship between the two is using origin in the weather table and faa on the airports table.
 
