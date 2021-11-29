@@ -72,3 +72,22 @@ view(itcountries)
 landcountries = grep("land$", itcountries, value = TRUE)
 itLANDcountries = gsub("land", "LAND",landcountries)
 view(itLANDcountries)
+
+# i did it. On to exercise 4
+
+(strings <- c("Axbc", "A.bc"))
+pattern <- "A.b"
+grep(pattern, strings, value = TRUE)
+grep(pattern, strings, value = TRUE, fixed = TRUE)
+
+pattern <- "a.b"
+grep(pattern, strings, value = TRUE)
+grep(pattern, strings, value = TRUE, ignore.case = TRUE)
+
+
+#find contienents with letter o (should be 2) Europe and Ocenaia.
+
+countrieso = grep("o|O", gDat$continent, value = TRUE)
+view(countrieso)
+
+#returns ocenania and Europe. Whoop whoop all done.
