@@ -25,6 +25,8 @@ calc_grams <- function(lb, fact) {
 
 calc_grams(x,fact)
 
+# answer = 1700.989
+
 #exercise 2
 
 #the below function estimates the mass in KG of an organism based on its length in meters for a set of values.
@@ -77,3 +79,10 @@ calc_shrub_vol <- function(length = 1, width = 1, height = 1) {
 }
 
 #passing a and b is more useful than having them fixed due to having more control of the values when you pass them. 
+
+
+# exercsie 4 
+calc_lb <- function(kg=1, fact=2.205) {
+  grams <- kg*fact
+  return(grams)}
+calc_lb()
