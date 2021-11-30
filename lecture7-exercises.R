@@ -85,4 +85,6 @@ calc_shrub_vol <- function(length = 1, width = 1, height = 1) {
 calc_lb <- function(kg=1, fact=2.205) {
   grams <- kg*fact
   return(grams)}
-calc_lb()
+calc_lb(get_mass_from_length(12,10.95,2.64))
+
+# answer = 17055.37 lb, feel like a dam wizard!!!!
