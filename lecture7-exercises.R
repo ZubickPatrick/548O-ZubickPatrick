@@ -38,17 +38,42 @@ length = 16
 
 get_mass_from_length_theropoda(length)
 
+# answer is 17150.56
+
+
 
 # new try of this function with getmassfromlength
 
-a=214.44
-b=1.46
-length = 26
 
-
-get_mass_from_length = function(length){
+get_mass_from_length = function(length =1, a = 1, b = 1){
   mass = a * length^ b
 return(mass)}
-get_mass_from_length(length)
+get_mass_from_length(26,214.44,1.46)
 
-#done exercise 2
+#done exercise 2 answer is 24955.54
+
+#exercise 3
+
+
+get_mass_from_length = function(length =1, a = 39.9, b = 2.6){
+  mass = a * length^ b
+  return(mass)}
+get_mass_from_length(22, 214.44,1.46)
+
+# answer is 19554.33
+
+
+
+get_mass_from_length = function(length =1, a = 39.9, b = 2.6){
+  mass = a * length^ b
+  return(mass)}
+get_mass_from_length(16)
+
+# answer is 53911.93
+
+calc_shrub_vol <- function(length = 1, width = 1, height = 1) {
+  volume <- length * width * height
+  return(volume)
+}
+
+#passing a and b is more useful than having them fixed due to having more control of the values when you pass them. 
