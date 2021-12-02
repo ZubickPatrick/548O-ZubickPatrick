@@ -61,8 +61,56 @@ if (veg_type == "tree") {
 }
 mass
 
+# print y = 10 if age class = sapling
+
 age_class = "sapling"
 if (age_class=="sapling"){y = 10
   
 }
+y
+
+veg_type <- "grass"
+volume <- 16.08
+if (veg_type == "tree") {
+  mass <- 2.65 * volume^0.9
+} else if (veg_type == "grass") {
+  mass <- 0.65 * volume^1.2
+}
+mass
+
+
+veg_type <- "shrub"
+volume <- 16.08
+if (veg_type == "tree") {
+  mass <- 2.65 * volume^0.9
+} else if (veg_type == "grass") {
+  mass <- 0.65 * volume^1.2
+} else {
+  mass <- NA
+}
+mass
+
+
+age_class <- "seedling"
+if (age_class == "sapling"){y = 10
+  
+} else if (age_class == "seedling"){y = 5}
+y
+
+#gives y = 5
+
+age_class <- "sapling"
+if (age_class == "sapling"){y = 10
+
+} else if (age_class == "seedling"){y = 5}
+y
+
+# gives y = 10
+
+age_class = "adult"
+if (age_class == "sapling"){y = 10
+} else if (age_class == "seedling") {y = 5
+} else {
+  y = NA
+  }
 y
