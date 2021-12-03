@@ -211,4 +211,27 @@ for (i in 1:length(birds)){
   print(birds[i])
 }
 
+#4 
+radius <- c(1.3, 2.1, 3.5)
+areas <- vector(mode = "numeric", length = 3)
+for (i in 1:length(radius)){
+  areas[i] <- pi * radius[i] ^ 2
+}
+areas
+# = 5.309292 13.854424 38.484510
 
+
+#5 
+
+lengths = c(1.1, 2.2, 1.6)
+widths = c(3.5, 2.4, 2.8)
+areas <- vector(length = i)
+for (i in 1:length(lengths)) {
+  areas[i] <- lengths[i] * widths[i]
+}
+areas
+
+# 3.85 5.28 4.48
+
+
+# all done! WHOOP WHOOP
