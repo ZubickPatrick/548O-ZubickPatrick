@@ -114,3 +114,59 @@ if (age_class == "sapling"){y = 10
   y = NA
   }
 y
+
+#exercise 3 complete
+
+#exercise 4 start
+
+x <- 5
+if (x > 2){
+  x * 2
+}
+if (x > 4){
+  x * 4
+}
+
+
+x <- 5
+if (x > 2){
+  x * 2
+} else if (x > 4){
+  x * 4
+}
+
+
+est_mass <- function(volume, veg_type){
+  if (veg_type == "tree") {
+    mass <- 2.65 * volume^0.9
+  } else if (veg_type == "grass") {
+    mass <- 0.65 * volume^1.2
+  } else {
+    print("I don't know how to convert volume to mass for that vegetation type")
+    mass <- NA
+  }
+  return(mass)
+}
+
+est_mass(1.6, "tree")
+est_mass(1.6, "grass")
+est_mass(1.6, "shrub")
+
+
+get_mass_from_length_by_name <- function(names,length){
+if ( names == "Stegosauria") {
+    mass = 10.95* length ^2.64
+} else if ( names == "Theropoda") {
+      mass = 0.73* length^3.63
+} else if ( names == "Sauropoda") {
+mass = 214.44 * length^ 1.46
+} else {mass = NA
+
+}
+return(mass)
+}
+
+get_mass_from_length_by_name ("Stegosauria", 10)
+get_mass_from_length_by_name ("Theropoda", 8)
+get_mass_from_length_by_name ("Sauropoda", 12)
+get_mass_from_length_by_name ("Anklyosauria", 13)
