@@ -170,3 +170,45 @@ get_mass_from_length_by_name ("Stegosauria", 10)
 get_mass_from_length_by_name ("Theropoda", 8)
 get_mass_from_length_by_name ("Sauropoda", 12)
 get_mass_from_length_by_name ("Anklyosauria", 13)
+
+
+est_mass <- function(volume, veg_type, age){
+  if (veg_type == "tree") {
+    if (age < 5) {
+      mass <- 1.6 * volume^0.8
+    } else {
+      mass <- 2.65 * volume^0.9
+    }
+  } else if (veg_type == "grass" | veg_type == "shrub") {
+    mass <- 0.65 * volume^1.2
+  } else {
+    print("I don't know how to convert volume to mass for that vegetation type")
+    mass <- NA
+  }
+  return(mass)
+}
+
+est_mass(1.6, "tree", age = 2)
+est_mass(1.6, "shrub", age = 5)
+
+
+# exercise 5 
+
+#1
+for (i in 2:16){
+  print(i)
+}
+
+#2
+
+for (i in 1:5){
+  print(i*3)
+}
+
+#3
+birds = c('robin', 'woodpecker', 'blue jay', 'sparrow')
+for (i in 1:length(birds)){
+  print(birds[i])
+}
+
+
